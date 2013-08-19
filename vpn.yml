@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars_prompt:
+    - name: "vpn_password"
+      prompt: "Password for user 'openvpn':"
+      private: yes
+      encrypt: "md5_crypt" 
+      confirm: yes
+      salt_size: 7
+  roles:
+     - { role: openvpn-access, password: $vpn_password }

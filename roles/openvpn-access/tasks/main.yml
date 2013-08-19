@@ -1,0 +1,11 @@
+---
+- name: Download OpenVPN Access Server
+  get_url: url=http://swupdate.openvpn.org/as/openvpn-as-1.8.4-Ubuntu10.amd_64.deb dest=/tmp/ovpn.deb
+
+- name: Install OpenVPN Access Server
+  shell: dpkg -i /tmp/ovpn.deb
+
+- name: Setup user 'openvpn'
+  user: name=openvpn password={{password}}
+
+- debug: msg="Login with user 'openvpn' to https://{{ ansible_default_ipv4.address }}:943"
