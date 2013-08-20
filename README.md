@@ -18,9 +18,7 @@ export DO_CLIENT_ID='DO123' DO_API_KEY='abc123'
 
 1. Create a Droplet with the Hostname **ovpn** on DigitalOcean
 
-2. Ìnstall the server with ```bash
-ansible-playbook vpn.yml -i inventory
-```
+2. Ìnstall the server with ```ansible-playbook vpn.yml -i inventory```
 
 3. Download the VPN-Profil from **https://server-ip:943**, login with user *openvpn*.
 
