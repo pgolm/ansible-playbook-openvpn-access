@@ -10,8 +10,18 @@ Tested with Ubuntu 12.04 x64
 
 ## Run
 
-```bash
-ANSIBLE_HOSTS=<server-ip>, ansible-playbook vpn.yml
+Set the DigitalOcean Env's like:
+
+```
+export DO_CLIENT_ID='DO123' DO_API_KEY='abc123'
 ```
 
-Download the VPN-Profil from **https://server-ip:943**, login with user *openvpn*.
+1. Create a Droplet with the Hostname **ovpn** on DigitalOcean
+
+2. Ìnstall the server with ```bash
+ansible-playbook vpn.yml -i inventory
+```
+
+3. Download the VPN-Profil from **https://server-ip:943**, login with user *openvpn*.
+
+4. Connect with ```openvpn --config client.ovpn```

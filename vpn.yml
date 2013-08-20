@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- hosts: ovpn
+  user: root
   vars_prompt:
     - name: "vpn_password"
       prompt: "Password for user 'openvpn':"
