@@ -1,6 +1,6 @@
 ---
 - name: Download OpenVPN Access Server
-  get_url: url=http://swupdate.openvpn.org/as/openvpn-as-1.8.4-Ubuntu10.amd_64.deb dest=/tmp/ovpn.deb
+  get_url: url=http://swupdate.openvpn.org/as/openvpn-as-1.8.5-Ubuntu12.{{ "i386" if ansible_architecture=="i386" else "amd_64" }}.deb dest=/tmp/ovpn.deb
 
 - name: Install OpenVPN Access Server
   shell: dpkg -i /tmp/ovpn.deb
